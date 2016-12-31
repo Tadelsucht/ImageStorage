@@ -55,7 +55,7 @@ for bit in ba:
     if len(bits) == COLOR_CODE_SIZE:
         progress_counter += COLOR_CODE_SIZE
         if progress_counter % (COLOR_CODE_SIZE*65536) == 0:
-            print("{0}".format(1.0*progress_counter / size * 64))
+            print("{0}".format(1.0*progress_counter / size * 100))
         number = int(''.join('1' if i else '0' for i in bits), 2)
         rgb = hex(number)[2:].zfill(6)
         pixels[x, y] = (int(rgb[4:6], 16), int(rgb[2:4],16), int(rgb[0:2],16))
