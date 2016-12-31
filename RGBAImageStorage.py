@@ -6,12 +6,12 @@ import array
 from PIL import Image
 from bitarray import bitarray
 
-COLOR_CODE_NON_DATA = (256, 256, 256, 256) # Weiss
+COLOR_CODE_NON_DATA = (0, 0, 0, 0) # Schwarz
 COLOR_CODE_SIZE = 32
-MAX_IMAGE_WIDTH = 4928
-MAX_IMAGE_HEIGHT = 3264
+MAX_IMAGE_WIDTH = 1200
+MAX_IMAGE_HEIGHT = 1200
 
-INPUT_FILE_PATH = "Verschuesselt.zip.008"
+INPUT_FILE_PATH = "LukHash_-_THE_OTHER_SIDE.mp3"
 
 size = os.path.getsize(INPUT_FILE_PATH) * 8
 
