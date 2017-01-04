@@ -18,7 +18,7 @@ zeros_in_a_row = 0
 while y < image_height:
     while x < image_width:
         pixel = pixels[x,y]
-        hex_string = hex(pixel[0])[2:].zfill(2) + hex(pixel[1])[2:].zfill(2) + hex(pixel[2])[2:].zfill(2) + hex(pixel[3])[2:].zfill(2)
+        hex_string = hex(pixel[3])[2:].zfill(2) + hex(pixel[2])[2:].zfill(2) + hex(pixel[1])[2:].zfill(2) + hex(pixel[0])[2:].zfill(2)
         number = "{0:b}".format(int(hex_string, 16)).zfill(32)
         for bit in number:
             bit = bool(int(bit))
