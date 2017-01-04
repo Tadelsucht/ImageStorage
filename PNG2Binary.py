@@ -1,10 +1,10 @@
+import png
 from PIL import Image
 from bitarray import bitarray
 
 INPUT_FILE_PATH = "LukHash_-_THE_OTHER_SIDE.mp3.0.png"
 
-image = Image.open(open(INPUT_FILE_PATH, 'rb'))
-pixels = image.load()
+image = png.Reader(INPUT_FILE_PATH)
 
 image_width = image.size[0]
 image_height = image.size[1]
@@ -18,7 +18,7 @@ zeros_in_a_row = 0
 while y < image_height:
     while x < image_width:
         pixel = pixels[x,y]
-        hex_string = hex(pixel[0])[2:].zfill(2) + hex(pixel[1])[2:].zfill(2) + hex(pixel[2])[2:].zfill(2) + hex(pixel[3])[2:].zfill(2)
+        hex_string = hex(pixel[3])[2:].zfill(2) + hex(pixel[2])[2:].zfill(2) + hex(pixel[1])[2:].zfill(2) + hex(pixel[0])[2:].zfill(2)
         number = "{0:b}".format(int(hex_string, 16)).zfill(32)
         for bit in number:
             bit = bool(int(bit))
